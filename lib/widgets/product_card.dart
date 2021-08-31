@@ -3,12 +3,16 @@ import 'package:eshop/models/models.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({Key key, this.product}) : super(key: key);
+  const ProductCard({Key key, this.product, this.widthFactory = 2.5}) : super(key: key);
 
   final Product product;
+  final double widthFactory;
 
   @override
   Widget build(BuildContext context) {
+
+    final double widthValue = MediaQuery.of(context).size.width / widthFactory;
+
     return Stack(
       children: [
         Container(

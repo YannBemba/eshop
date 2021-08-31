@@ -1,4 +1,6 @@
+import 'package:eshop/blocs/wishlist/wishlist_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({Key key}) : super(key: key);
@@ -18,10 +20,14 @@ class CustomNavBar extends StatelessWidget {
                 Navigator.pushNamed(context, '/');
               },
             ),
-            IconButton(
-              icon: Icon(Icons.shopping_cart, color: Colors.white,),
-              onPressed: () {
-                Navigator.pushNamed(context, '/cart');
+            BlocBuilder<WishlistBloc, WishlistState>(
+              builder: (context, state) {
+                return IconButton(
+                  icon: Icon(Icons.shopping_cart, color: Colors.white,),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/cart');
+                  },
+                );
               },
             ),
             IconButton(

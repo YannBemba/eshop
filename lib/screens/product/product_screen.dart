@@ -1,3 +1,4 @@
+import 'package:eshop/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -14,8 +15,9 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Scaffold(
+      appBar: CustomAppBar(),
+      bottomNavigationBar: CustomNavBar(),
     );
   }
 }
